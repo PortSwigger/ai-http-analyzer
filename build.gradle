@@ -13,6 +13,7 @@ dependencies {
     compileOnly 'net.portswigger.burp.extensions:montoya-api:2025.2' // Burp API
     implementation 'org.commonmark:commonmark:0.18.2' // Markdown rendering
     implementation 'com.vladsch.flexmark:flexmark-all:0.64.8'
+    implementation 'org.jsoup:jsoup:1.14.3' // HTML sanitization
 }
 
 jar {
