@@ -10,6 +10,9 @@ import burp.api.montoya.ui.editor.HttpRequestEditor;
 import burp.api.montoya.ui.editor.HttpResponseEditor;
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.safety.Safelist;
 
 import javax.swing.*;
 import java.awt.*;
@@ -148,10 +151,15 @@ public class BurpAiRequestTab extends JPanel
                     content = content.replaceAll("`+", "");
                 }
 
+                // Sanitize the HTML content to remove potentially dangerous elements
+                Document.OutputSettings outputSettings = new Document.OutputSettings();
+                outputSettings.prettyPrint(false);
+                String sanitizedContent = Jsoup.clean(content, "", Safelist.basic(), outputSettings);
+
                 // Convert Markdown to HTML
                 Parser parser = Parser.builder().build();
                 HtmlRenderer renderer = HtmlRenderer.builder().build();
-                String htmlContent = renderer.render(parser.parse(content));
+                String htmlContent = renderer.render(parser.parse(sanitizedContent));
 
                 logging.logToOutput("AI response received successfully");
                 SwingUtilities.invokeLater(() ->
