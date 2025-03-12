@@ -6,7 +6,7 @@ ScreenVersion: 2025.1.0
 SerialVersion: 1
 MinPlatformVersion: 19
 ProOnly: True
-Author: Alperen
+Author: Alperen Ergel
 ShortDescription: Use AI to analyze HTTP requests and responses for potential security vulnerabilities like SQL injection, XSS, CSRF and more.
 EntryPoint: build/libs/ai-http-analyzer-2025.1.1.jar
 BuildCommand: ./gradlew jar
