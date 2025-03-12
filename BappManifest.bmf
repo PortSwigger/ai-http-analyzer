@@ -2,8 +2,8 @@ Uuid: 36cb140ac1a6449bbab1bafc18df8cfa
 ExtensionType: 1
 Name: AI HTTP Analyzer
 RepoName: ai-http-analyzer
-ScreenVersion: 2025.1.0
-SerialVersion: 1
+ScreenVersion: 2025.1.1
+SerialVersion: 2
 MinPlatformVersion: 19
 ProOnly: True
 Author: Alperen Ergel
